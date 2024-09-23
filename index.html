@@ -4,8 +4,70 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>donate-bangladesh</title>
+    <!-- Google Font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+          },
+        },
+      };
+    </script>
   </head>
   <body>
+    <header>
+      <nav class="flex justify-between items-center px-10 py-5 bg-gray-100">
+        <div>
+          <h1
+            class="text-gray-700 text-2xl font-semibold leading-5 rounded-lg bg-[#b4f461] px-8 py-4"
+          >
+            Blog
+          </h1>
+        </div>
+        <div class="flex justify-center items-center gap-5">
+          <img src="./assets/logo.png" alt="donate-logo" />
+          <h1 class="text-gray-700 text-2xl font-semibold leading-5">
+            Donate Bangladesh
+          </h1>
+        </div>
+        <div class="flex justify-center items-center gap-1">
+          <img class="w-7 h-7" src="./assets/coin.png" alt="coin" />
+          <p
+            class="text-gray-700 opacity-85 font-size-lg font-medium leading-5"
+          >
+            5500
+          </p>
+          <p
+            class="text-gray-700 opacity-85 font-size-lg font-medium leading-5"
+          >
+            BDT
+          </p>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <!-- page change btn  -->
+      <section class="text-center mx-auto my-0">
+        <button
+          class="text-gray-700 opacity-70 font-medium px-8 py-4 text-lg border border-gray-700 border-opacity-30 rounded-lg"
+        >
+          Donation
+        </button>
+        <button>History</button>
+      </section>
+    </main>
+    <footer></footer>
     <script src="./index.js"></script>
   </body>
 </html>
