@@ -11,6 +11,12 @@
       href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
       rel="stylesheet"
     />
+    <!-- daisyUI  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -18,12 +24,13 @@
         theme: {
           extend: {
             colors: {
-              clifford: "#da373d",
+              "btn-green": "#b4f461",
             },
           },
         },
       };
     </script>
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <header>
@@ -44,6 +51,7 @@
         <div class="flex justify-center items-center gap-1">
           <img class="w-7 h-7" src="./assets/coin.png" alt="coin" />
           <p
+            id="total-blance"
             class="text-gray-700 opacity-85 font-size-lg font-medium leading-5"
           >
             5500
@@ -56,15 +64,90 @@
         </div>
       </nav>
     </header>
-    <main>
+    <main class="mt-10">
       <!-- page change btn  -->
       <section class="text-center mx-auto my-0">
         <button
-          class="text-gray-700 opacity-70 font-medium px-8 py-4 text-lg border border-gray-700 border-opacity-30 rounded-lg"
+          id="btn-donation"
+          class="text-gray-700 font-medium px-8 py-4 text-lg border border-gray-700 border-opacity-30 rounded-lg"
         >
           Donation
         </button>
-        <button>History</button>
+        <button
+          id="btn-history"
+          class="text-gray-700 font-medium px-8 py-4 text-lg border border-gray-700 border-opacity-30 rounded-lg"
+        >
+          History
+        </button>
+      </section>
+      <!-- card  -->
+      <section id="donation-page">
+        <div class="flex">
+          <div>
+            <img src="./assets/noakhali.png" alt="feni-trouble" />
+          </div>
+          <div>
+            <p id="amount-received">0</p>
+            <h2 id="donation-title">
+              Donate for Flood at Noakhali, Bangladesh
+            </h2>
+            <form>
+              <input id="amount-input" type="text" />
+              <button id="amounts-submit-btn">Donate</button>
+            </form>
+          </div>
+        </div>
+        <!-- div 2 -->
+        <div class="flex">
+          <div>
+            <img src="./assets/noakhali.png" alt="feni-trouble" />
+          </div>
+          <div>
+            <p id="amount-received-2">0</p>
+            <h2 id="donation-title-2">
+              Donate for Flood at Noakhali, Bangladesh
+            </h2>
+            <form>
+              <input id="amount-input-2" type="text" />
+              <button id="amounts-submit-btn-2">Donate</button>
+            </form>
+          </div>
+        </div>
+        <!-- div 3 -->
+        <div class="flex">
+          <div>
+            <img src="./assets/noakhali.png" alt="feni-trouble" />
+          </div>
+          <div>
+            <p id="amount-received-3">0</p>
+            <h2 id="donation-title-3">
+              Donate for Flood at Noakhali, Bangladesh
+            </h2>
+            <form>
+              <input id="amount-input-3" type="text" />
+              <button id="amounts-submit-btn-3">Donate</button>
+            </form>
+          </div>
+        </div>
+      </section>
+      <!-- History Page  -->
+      <section id="history-page">
+        <div class="text-lg bg-red-600">I Love Bangladesh</div>
+      </section>
+      <section>
+        <!-- Open the modal using ID.showModal() method -->
+        <dialog id="popup-modal" class="modal modal-bottom sm:modal-middle">
+          <div class="modal-box">
+            <h3 class="text-lg font-bold">Hello!</h3>
+            <p class="py-4">Press ESC key or click the button below to close</p>
+            <div class="modal-action">
+              <form method="dialog">
+                <!-- if there is a button in form, it will close the modal -->
+                <button class="btn">Close</button>
+              </form>
+            </div>
+          </div>
+        </dialog>
       </section>
     </main>
     <footer></footer>
