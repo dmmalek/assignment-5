@@ -38,12 +38,12 @@ function toggleBtnClass(e) {
     }
 }
 
-// add blance 
+// add balance 
 
 let amountReceived = document.getElementById('amount-received');
 let amountInput = document.getElementById('amount-input')
 let amountSubmitBtn = document.getElementById('amounts-submit-btn')
-let totalBlance = document.getElementById('total-blance');
+let totalBalance = document.getElementById('total-balance');
 let donationTitle = document.getElementById('donation-title')
 
 
@@ -51,15 +51,15 @@ amountSubmitBtn.addEventListener('click', function (e) {
     e.preventDefault();
     let amount = parseFloat(amountInput.value);
     let currentAmount = parseFloat(amountReceived.innerText)
-    let currentBlance = parseFloat(totalBlance.innerText);
-    let validationsStatus = inputValidation(amount, currentBlance)
-    if (validationsStatus?.status === false) {
-        alert(validationsStatus?.message);
+    let currentBalance = parseFloat(totalBalance.innerText);
+    let inputValidation = isInputValid(amountInput.value, currentBalance)
+    if (!inputValidation) {
         return;
     }
+
     amountReceived.innerText = amount + currentAmount;
 
-    totalBlance.innerText = currentBlance - amount;
+    totalBalance.innerText = currentBalance - amount;
     let donationTitleText = donationTitle.innerText;
     amountInput.value = "";
     donationCard(amount, donationTitleText);
@@ -78,10 +78,13 @@ amountSubmitBtnTwo.addEventListener('click', function (e) {
     e.preventDefault();
     let amount = parseFloat(amountInputTwo.value);
     let currentAmount = parseFloat(amountReceivedTwo.innerText)
+    let currentBalance = parseFloat(totalBalance.innerText);
+    let inputValidation = isInputValid(amountInputTwo.value, currentBalance)
+    if (!inputValidation) {
+        return;
+    }
     amountReceivedTwo.innerText = amount + currentAmount;
-
-    let currentBlance = parseFloat(totalBlance.innerText);
-    totalBlance.innerText = currentBlance - amount;
+    totalBalance.innerText = currentBalance - amount;
     let donationTitleText = donationTitleTwo.innerText;
     amountInputTwo.value = "";
     donationCard(amount, donationTitleText);
@@ -100,10 +103,15 @@ amountSubmitBtnThree.addEventListener('click', function (e) {
     e.preventDefault();
     let amount = parseFloat(amountInputThree.value);
     let currentAmount = parseFloat(amountReceivedThree.innerText)
+    let currentBalance = parseFloat(totalBalance.innerText);
+
+    let inputValidation = isInputValid(amountInputThree.value, currentBalance)
+    if (!inputValidation) {
+        return;
+    }
     amountReceivedThree.innerText = amount + currentAmount;
 
-    let currentBlance = parseFloat(totalBlance.innerText);
-    totalBlance.innerText = currentBlance - amount;
+    totalBalance.innerText = currentBalance - amount;
     let donationTitleText = donationTitleThree.innerText;
     amountInputThree.value = "";
     donationCard(amount, donationTitleText);
@@ -132,11 +140,17 @@ function donationCard(amount, donationTitleText) {
 }
 
 
-function inputValidation(amount, currentBlance) {
-    if (isNaN(amount)) {
-        return {
-            status: false,
-            message: 'amount is not a number'
-        }
+function isInputValid(amount, currentBalance) {
+    if (!amount) {
+        alert("donation amount is empty")
+        return false;
+    } else if (isNaN(amount)) {
+        alert("input is not valid")
+        return false;
+    } else if (parseFloat(amount) > currentBalance) {
+        alert("amount is greater than the balance")
+        return false;
     }
+
+    return true;
 }
