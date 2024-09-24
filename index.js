@@ -123,7 +123,7 @@ amountSubmitBtnThree.addEventListener('click', function (e) {
 
 
 
-// Re-useable donation function 
+// Re-useable  function 
 // Function for popup 
 let popupModal = document.getElementById('popup-modal')
 
@@ -156,6 +156,10 @@ function isInputValid(amount, currentBalance) {
         return false;
     } else if (parseFloat(amount) > currentBalance) {
         alert("Amount is greater than the balance")
+        return false;
+    }
+    else if (parseFloat(amount) < 0) {
+        alert("Negative amount is not allowed for donate")
         return false;
     }
 
