@@ -17,6 +17,8 @@ window.addEventListener("load", function () {
     historyPage.classList.add('hidden')
 })
 
+// Function for change page using button 
+
 function toggleBtnClass(e) {
     let btnText = e.target.innerText;
     if (btnText === 'Donation') {
@@ -119,17 +121,21 @@ amountSubmitBtnThree.addEventListener('click', function (e) {
 
 })
 
+
+
+// Re-useable donation function 
+// Function for popup 
 let popupModal = document.getElementById('popup-modal')
 
 function openPopUPMOdal() {
     popupModal.onclick(popupModal.showModal())
 }
 
-// create useable donation function 
+// Function for history page 
 
 function donationCard(amount, donationTitleText) {
     const div = document.createElement('div');
-    div.classList.add('border', 'border-gray-200', 'rounded-xl', 'mx-auto', 'w-8/12', 'my-8', 'p-8', 'space-y-4');
+    div.classList.add('border', 'border-gray-200', 'text-left', 'rounded-xl', 'mx-auto', 'w-11/12', 'lg:w-8/12', 'my-8', 'p-4', 'lg:p-8', 'space-y-4');
     div.innerHTML = `
             
                 <p class = 'font-bold'>${amount} Taka is Donated for ${donationTitleText}</p>
@@ -139,16 +145,17 @@ function donationCard(amount, donationTitleText) {
     historyPage.appendChild(div);
 }
 
+// Function for Validation 
 
 function isInputValid(amount, currentBalance) {
     if (!amount) {
-        alert("donation amount is empty")
+        alert("Donation amount is empty")
         return false;
     } else if (isNaN(amount)) {
-        alert("input is not valid")
+        alert("Input is not valid")
         return false;
     } else if (parseFloat(amount) > currentBalance) {
-        alert("amount is greater than the balance")
+        alert("Amount is greater than the balance")
         return false;
     }
 
