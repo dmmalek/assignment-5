@@ -51,20 +51,18 @@ amountSubmitBtn.addEventListener('click', function (e) {
     e.preventDefault();
     let amount = parseFloat(amountInput.value);
     let currentAmount = parseFloat(amountReceived.innerText)
+    let currentBlance = parseFloat(totalBlance.innerText);
+    let validationsStatus = inputValidation(amount, currentBlance)
+    if (validationsStatus?.status === false) {
+        alert(validationsStatus?.message);
+        return;
+    }
     amountReceived.innerText = amount + currentAmount;
 
-    let currentBlance = parseFloat(totalBlance.innerText);
     totalBlance.innerText = currentBlance - amount;
     let donationTitleText = donationTitle.innerText;
-    const div = document.createElement('div');
-    div.classList.add('bg-yellow-300');
-    div.innerHTML = `
-            
-                <p>${amount} Taka is Donated for ${donationTitleText}</p>
-                <p>${new Date()}</p>
-            `
-
-    historyPage.appendChild(div);
+    amountInput.value = "";
+    donationCard(amount, donationTitleText);
     openPopUPMOdal();
 
 
@@ -85,15 +83,8 @@ amountSubmitBtnTwo.addEventListener('click', function (e) {
     let currentBlance = parseFloat(totalBlance.innerText);
     totalBlance.innerText = currentBlance - amount;
     let donationTitleText = donationTitleTwo.innerText;
-    const div = document.createElement('div');
-    div.classList.add('bg-yellow-300');
-    div.innerHTML = `
-            
-                <h2>${amount} Taka is Donated for ${donationTitleText}</h2>
-                <p>${new Date()}</p>
-            `
-
-    historyPage.appendChild(div);
+    amountInputTwo.value = "";
+    donationCard(amount, donationTitleText);
     openPopUPMOdal();
 
 
@@ -114,6 +105,21 @@ amountSubmitBtnThree.addEventListener('click', function (e) {
     let currentBlance = parseFloat(totalBlance.innerText);
     totalBlance.innerText = currentBlance - amount;
     let donationTitleText = donationTitleThree.innerText;
+    amountInputThree.value = "";
+    donationCard(amount, donationTitleText);
+    openPopUPMOdal();
+
+})
+
+let popupModal = document.getElementById('popup-modal')
+
+function openPopUPMOdal() {
+    popupModal.onclick(popupModal.showModal())
+}
+
+// create useable donation function 
+
+function donationCard(amount, donationTitleText) {
     const div = document.createElement('div');
     div.classList.add('border', 'border-gray-200', 'rounded-xl', 'mx-auto', 'w-8/12', 'my-8', 'p-8', 'space-y-4');
     div.innerHTML = `
@@ -123,13 +129,14 @@ amountSubmitBtnThree.addEventListener('click', function (e) {
             `
 
     historyPage.appendChild(div);
+}
 
-    openPopUPMOdal();
 
-})
-
-let popupModal = document.getElementById('popup-modal')
-
-function openPopUPMOdal() {
-    popupModal.onclick(popupModal.showModal())
+function inputValidation(amount, currentBlance) {
+    if (isNaN(amount)) {
+        return {
+            status: false,
+            message: 'amount is not a number'
+        }
+    }
 }
