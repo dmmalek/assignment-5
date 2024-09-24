@@ -89,7 +89,7 @@ amountSubmitBtnTwo.addEventListener('click', function (e) {
     div.classList.add('bg-yellow-300');
     div.innerHTML = `
             
-                <p>${amount} Taka is Donated for ${donationTitleText}</p>
+                <h2>${amount} Taka is Donated for ${donationTitleText}</h2>
                 <p>${new Date()}</p>
             `
 
@@ -115,10 +115,10 @@ amountSubmitBtnThree.addEventListener('click', function (e) {
     totalBlance.innerText = currentBlance - amount;
     let donationTitleText = donationTitleThree.innerText;
     const div = document.createElement('div');
-    div.classList.add('bg-yellow-300');
+    div.classList.add('border', 'border-gray-200', 'rounded-xl', 'mx-auto', 'w-8/12', 'my-8', 'p-8', 'space-y-4');
     div.innerHTML = `
             
-                <p>${amount} Taka is Donated for ${donationTitleText}</p>
+                <p class = 'font-bold'>${amount} Taka is Donated for ${donationTitleText}</p>
                 <p>${new Date()}</p>
             `
 

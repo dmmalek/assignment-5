@@ -36,11 +36,12 @@
     <header>
       <nav class="flex justify-between items-center px-10 py-5 bg-gray-100">
         <div>
-          <h1
+          <a
+            href="./blog.html"
             class="text-gray-700 text-2xl font-semibold leading-5 rounded-lg bg-[#b4f461] px-8 py-4"
           >
             Blog
-          </h1>
+          </a>
         </div>
         <div class="flex justify-center items-center gap-5">
           <img src="./assets/logo.png" alt="donate-logo" />
@@ -98,7 +99,7 @@
                   id="amount-received"
                   class="text-gray-600 text-base font-semibold leading-5"
                 >
-                  0
+                  4050
                 </p>
                 <p class="text-gray-600 text-base font-semibold leading-5">
                   BDT
@@ -148,7 +149,7 @@
                   id="amount-received-2"
                   class="text-gray-600 text-base font-semibold leading-5"
                 >
-                  0
+                  2550
                 </p>
                 <p class="text-gray-600 text-base font-semibold leading-5">
                   BDT
@@ -186,42 +187,88 @@
           </div>
         </div>
         <!-- div 3 -->
-        <div class="flex">
-          <div>
+        <div
+          class="flex border border-gray-200 rounded-xl w-10/12 mx-auto p-8 gap-8"
+        >
+          <div div class="basis-2/4">
             <img src="./assets/quota-protest.png" alt="feni-trouble" />
           </div>
-          <div>
-            <p id="amount-received-3">0</p>
-            <h2 id="donation-title-3">Aid for Injured in the Quota Movement</h2>
-            <p>
-              The recent floods in Noakhali have caused significant damage to
-              homes infrastructure. Your donation will help provide essential
-              supplies and to those affected by this disaster. Every
-              contribution, big or small, makes difference. Please join us in
-              supporting the relief efforts and making a positive impact on the
-              lives of those in need.
+          <div div class="basis-2/4">
+            <span class="rounded-lg bg-gray-50 px-3 py-2.5 inline-block" mb-4>
+              <div class="flex justify-center items-center gap-1">
+                <img class="w-6" src="./assets/coin.png" alt="coin" />
+                <p
+                  id="amount-received-3"
+                  class="text-gray-600 text-base font-semibold leading-5"
+                >
+                  5000
+                </p>
+                <p class="text-gray-600 text-base font-semibold leading-5">
+                  BDT
+                </p>
+              </div>
+            </span>
+
+            <h2 id="donation-title-3" class="font-text-3xl font-bold mb-4">
+              Aid for Injured in the Quota Movement
+            </h2>
+            <p class="opacity-70 mb-10">
+              The recent Quota movement has resulted in numerous injuries and
+              significant hardship for many individuals. Your support is crucial
+              in providing medical assistance, rehabilitation, and necessary
+              supplies to those affected. By contributing, you help ensure that
+              injured individuals receive the care and support they need during
+              this challenging time. Every donation plays a vital role in
+              alleviating their suffering and aiding in their recovery. Please
+              consider making a donation to support these brave individuals in
+              their time of need.
             </p>
             <form>
-              <input id="amount-input-3" type="text" />
-              <button id="amounts-submit-btn-3">Donate Now</button>
+              <input
+                id="amount-input-3"
+                class="border border-gray-200 rounded-lg inline-block w-full p-4 mb-4"
+                type="text"
+                placeholder="Write Donation Amount"
+              />
+              <button
+                id="amounts-submit-btn-3"
+                class="inline-block w-full bg-btn-green rounded-lg text-lg font-bold py-4"
+              >
+                Donate Now
+              </button>
             </form>
           </div>
         </div>
       </section>
       <!-- History Page  -->
       <section id="history-page">
-        <div class="text-lg bg-red-600">I Love Bangladesh</div>
+        <div
+          class="border border-gray-200 rounded-xl mx-auto w-8/12 my-8 p-8 space-y-4"
+        >
+          <h2 class="font-bold">
+            96500 Taka is Donated for famine-2024 at Feni, Bangladesh
+          </h2>
+          <p class="opacity-70">
+            Date : Tue Sep 17 2024 08:39:11 GMT +0600 (Bangladesh Standard Time)
+          </p>
+        </div>
       </section>
+      <!-- Pop Card  -->
       <section>
-        <!-- Open the modal using ID.showModal() method -->
         <dialog id="popup-modal" class="modal modal-bottom sm:modal-middle">
-          <div class="modal-box">
-            <h3 class="text-lg font-bold">Hello!</h3>
-            <p class="py-4">Press ESC key or click the button below to close</p>
-            <div class="modal-action">
+          <div class="modal-box text-center">
+            <h3 class="text-3xl font-bold mb-2">Congrates!</h3>
+            <img
+              class="inline-block mx-auto w-10 h-10"
+              src="./assets/coin.png"
+              alt="coin"
+            />
+            <p class="py-4 mb-2">You Have Donated For Humankind</p>
+            <h4 class="text-2xl font-bold text-gray-700">Successfully</h4>
+            <div class="modal-action inline-block mx-auto">
               <form method="dialog">
                 <!-- if there is a button in form, it will close the modal -->
-                <button class="btn">Close</button>
+                <button class="btn">Close Confirmation</button>
               </form>
             </div>
           </div>

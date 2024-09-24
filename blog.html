@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>blog page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- daisyUI  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "btn-green": "#b4f461",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+      <nav
+        class="flex justify-between items-center px-14 py-5 bg-gray-100 mb-10"
+      >
+        <div>
+          <a
+            href="./index.html"
+            class="text-gray-700 text-2xl font-semibold leading-5 rounded-lg bg-[#b4f461] px-8 py-4"
+          >
+            Home
+          </a>
+        </div>
+        <div class="flex justify-center items-center gap-5">
+          <img src="./assets/logo.png" alt="donate-logo" />
+          <h1 class="text-gray-700 text-2xl font-semibold leading-5">
+            Donate Bangladesh
+          </h1>
+        </div>
+        <div class="flex justify-center items-center gap-1">
+          <img class="w-7 h-7" src="./assets/coin.png" alt="coin" />
+          <p
+            id="total-blance"
+            class="text-gray-700 opacity-85 font-size-lg font-medium leading-5"
+          >
+            5500
+          </p>
+          <p
+            class="text-gray-700 opacity-85 font-size-lg font-medium leading-5"
+          >
+            BDT
+          </p>
+        </div>
+      </nav>
+    </header>
+    <div class="w-11/12 mx-auto">
+      <div class="flex gap-1">
+        <h1 class="text-3xl font-bold mb-10">Important FAQ</h1>
+        <img class="w-6 h-6" src="./assets/faq.png" alt="" />
+      </div>
+
+      <div class="collapse collapse-arrow bg-base-200">
+        <input type="radio" name="my-accordion-2" checked="checked" />
+        <div class="collapse-title text-xl font-medium">
+          What is the Document Object Model (DOM)?
+        </div>
+        <div class="collapse-content">
+          <p>
+            The Document Object Model (DOM) is a programming interface that
+            represents the structure of a web page as a tree of nodes and
+            objects. It allows developers to manipulate the page's content,
+            style, and structure using scripting languages like JavaScript.
+          </p>
+        </div>
+      </div>
+      <div class="collapse collapse-arrow bg-base-200">
+        <input type="radio" name="my-accordion-2" />
+        <div class="collapse-title text-xl font-medium">
+          How do you select an element from the DOM?
+        </div>
+        <div class="collapse-content">
+          <p>
+            To select an element from the Document Object Model (DOM) in
+            JavaScript, you use methods like getElementById() to access an
+            element by its unique ID, getElementsByClassName() to find elements
+            with a specific class name, or querySelector() to select an element
+            using a CSS selector that can combine ID, class, tag name, and
+            attributes to target specific elements.
+          </p>
+        </div>
+      </div>
+      <div class="collapse collapse-arrow bg-base-200">
+        <input type="radio" name="my-accordion-2" />
+        <div class="collapse-title text-xl font-medium">
+          What is event delegation in the context of the DOM, and why is it
+          useful?
+        </div>
+        <div class="collapse-content">
+          <p>
+            In the context of the DOM (Document Object Model), event delegation
+            is a technique where you attach a single event listener to a parent
+            element, allowing it to handle events triggered on any of its child
+            elements, instead of attaching separate listeners to each child
+            element; this is useful because it significantly improves
+            performance, especially when dealing with large lists of dynamically
+            generated elements, by minimizing the number of event listeners
+            needed and simplifying code maintenance.
+          </p>
+        </div>
+      </div>
+      <div class="collapse collapse-arrow bg-base-200">
+        <input type="radio" name="my-accordion-2" />
+        <div class="collapse-title text-xl font-medium">
+          How do you manipulate an element's attributes and styles using the
+          DOM?
+        </div>
+        <div class="collapse-content">
+          <p>
+            To manipulate an element's attributes and styles using the DOM in
+            JavaScript, you first need to select the desired element using
+            methods like getElementById, querySelector, or
+            getElementsByClassName, then access its properties like setAttribute
+            to change attributes and style to modify inline CSS styles directly
+            on the element.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
